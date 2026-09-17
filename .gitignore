@@ -1,0 +1,17 @@
+# Local development and editor files
+.env
+.env.*
+.vscode/
+.idea/
+
+# Operating system files
+.DS_Store
+Thumbs.db
+
+# Logs and runtime output
+*.log
+tmp/
+cache/
+
+# PHP/XAMPP local overrides
+config/database.local.php
