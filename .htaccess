@@ -1,0 +1,14 @@
+RewriteEngine On
+Options -MultiViews
+
+# Allow direct file or folder access
+RewriteCond %{REQUEST_FILENAME} -f [OR]
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule ^ - [L]
+
+# API routes
+RewriteRule ^api/(.*)$ api/index.php?route=$1 [QSA,L]
+RewriteRule ^tasks/?(.*)$ api/index.php?route=tasks/$1 [QSA,L]
+
+# Frontend route
+RewriteRule ^ index.php [L]
